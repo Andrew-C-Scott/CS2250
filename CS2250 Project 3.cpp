@@ -11,33 +11,42 @@
 #include "Horse.h"
 using namespace std;
 
+//*****************************
+// Name: Andrew Scott
+// Assignment: CS2250 Project 3
+//***************************** 
+
+
+//*****************************
+// Driver Code (main cpp file)
+//****************************
+
 int main()
 {
-    //get horse name
-    string horseName;
-    cout << "Enter name of horse: " << endl;
-    cin >> horseName;
+	Horse *horseObj = nullptr;
+	int numObj = 0;
 
-    //get rider name
-    string riderName;
-    cout << "Enter name of Rider: " << endl;
-    cin >> riderName;
-    
-    //create object
-    Horse object1(horseName, riderName);
-    cout << "Horse: " <<
-        object1.getHorseName() << endl; 
+	//validate entry for number of horses/riders must accept numObj > 0
+	do{
+		cout << "Enter Number of Horses are in the race: " << endl;
+		cin >> numObj;
+	}while (numObj <= 0);
 
-    cout << "Rider: " << 
-        object1.getRiderName() << endl;
+	horseObj = new Horse[numObj];
+
+	for (int i = 0; i < numObj; i++) // loop through number of objects assign horse/rider name;
+	{
+		cout << "Horse " << i + 1 << ": " << horseObj[i].getHorseName() << " riden by, " 
+		<< horseObj[i].getRiderName() << "." << endl;
+		
+		cout << "\n";
+	}
+
+	//validate entry for race distance must be greater than 100 yards
+	int raceDist;
+	do {
+		cout << "Pick Race distance, must be greater than 100 yards: " << endl;
+		cin >> raceDist;
+	} while (raceDist <= 100);
+
 }
-
-
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file

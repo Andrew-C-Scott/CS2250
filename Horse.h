@@ -47,7 +47,7 @@ public:
 	int runASecond(int distTravel); // method that adds to distance traveled an amount from 0 - maxRunDistPerSecond (this moves horse along track)
 
 
-	int sendToGate();// sends horse to the start of a race by setting distance traveled to 0
+	int sendToGate(int distTraveled);// sends horse to the start of a race by setting distance traveled to 0
 	int displayHorse(int goalLength);
 };
 

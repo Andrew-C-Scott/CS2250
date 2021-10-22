@@ -13,3 +13,10 @@ int runASecond() // method that adds to distance traveled an amount from 0 - max
 {
 	
 }
+
+
+int sendToGate(int distTraveled) // reset the horse to start of a race by setting dist traveled to 0
+{
+	distanceTraveled = 0;
+	return distanceTraveled
+}

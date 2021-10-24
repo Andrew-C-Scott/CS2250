@@ -18,7 +18,8 @@ private:
 	int distanceTraveled; // how far horse has gone already
 	int racesWon; //number of races won by horse and rider
 public:
-	Horse() //default constructor
+	
+	Horse()//default constructor
 	{}
 	Horse(string horseName, string riderName) //constructor accepts horse/rider name as argument. Initialize each horse to a random maxRunDistperSecond
 	{
@@ -26,29 +27,32 @@ public:
 		rider = riderName;
 		srand(time(NULL));
 		maxRunningDistPerSecond = rand() % 100 + 1;
+		distanceTraveled = 0;
 	}
 	string getHorseName() //returns horse name
 	{
 		cout << "Enter Horse name: " << endl;
 		cin >> name;
-		
 		return name;
 	}
 	string getRiderName() //returns rider name
 	{
 		cout << "Enter rider name: " << endl;
 		cin >> rider;
-
 		return rider;
 	}
 	
 	
-	
-	int runASecond(int distTravel); // method that adds to distance traveled an amount from 0 - maxRunDistPerSecond (this moves horse along track)
-
-
-	int sendToGate(int distTraveled);// sends horse to the start of a race by setting distance traveled to 0
+	void setMaxRunningDistPerSecond(int maxRunDistPerSec)
+	{
+		srand(time(NULL));
+		maxRunningDistPerSecond = maxRunDistPerSec;
+	}
+	int getMaxRunningDistPerSecond()
+	{
+		return maxRunningDistPerSecond;
+	}
+	int runASecond(); // method that adds to distance traveled an amount from 0 - maxRunDistPerSecond (this moves horse along track)
+	int sendToGate();// sends horse to the start of a race by setting distance traveled to 0
 	int displayHorse(int goalLength);
-};
-
 

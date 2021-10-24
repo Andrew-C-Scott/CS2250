@@ -3,20 +3,40 @@
 #include <iostream>
 using namespace std;
 
-
 //**********************************
 // Horse member function definitions
 //**********************************
 
 
-int runASecond() // method that adds to distance traveled an amount from 0 - maxRunDistPerSecond (this moves horse along track)
+int Horse::runASecond() // method that adds to distance traveled an amount from 0 - maxRunDistPerSecond (this moves horse along track)
 {
-	
+	int totalDistRan = distanceTraveled = +maxRunningDistPerSecond;
+	return totalDistRan;
 }
 
-
-int sendToGate(int distTraveled) // reset the horse to start of a race by setting dist traveled to 0
+int Horse::sendToGate()//resets horse to dist traveled 0;
 {
-	distanceTraveled = 0;
-	return distanceTraveled
+	cout << "Do you want to play again? ";
+	char choice;
+	cin >> choice;
+
+	if (tolower(choice) == 'y')
+	{
+		distanceTraveled = 0;
+		return distanceTraveled;
+	}
+	else if (tolower(choice) == 'n')
+	{
+		return 0;
+	}
+	else
+	{
+		cout << "enter valid input. " << endl;
+		cin >> choice;
+	}
+}
+
+int Horse::displayHorse(int goalLength)
+{
+
 }
